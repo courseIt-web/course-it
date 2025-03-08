@@ -10,45 +10,59 @@ st.set_page_config(
 
 import streamlit as st
 
-background_url = "https://wallpaperset.com/w/full/f/3/2/32782.jpg"
-
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background: url("{background_url}") no-repeat center center fixed;
-        background-size: cover;
-    }}
-    .stApp::before {{
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        filter: blur(5px);
-        z-index: -1;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
 
 st.markdown("""
     <style>
+    
+    
+    
+    
     /* Global styles */
-    .stApp{
-        position: relative;
-        min-height: 100vh;
-        background-size: 95%;
-        opacity: 0.95;
-        background-position: center;
-        background-image: url('img.jpeg');
-        background-size: cover;
-    }
+ 
+        .stApp {
+            position: relative;
+            min-height: 100vh;
+            background-size: 95%;
+            opacity:0.8;
+            background-position: center;
+            background-image: url('https://pixelartusa.com/cdn/shop/files/4BP57titanic2_2048x.jpg?v=1696262400');
+        }
+
+        /* Ensure overlays are behind the content */
+        .stApp::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: inherit;
+            background-size: inherit;
+            background-position: inherit;
+            background-repeat: inherit;
+            filter: blur(3px);
+            pointer-events: none;
+            z-index: -2; /* Send behind all content */
+        }
+
+        .stApp::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay */
+            pointer-events: none;
+            z-index: -1; /* Behind content but above the background */
+        }
+
+        .stApp > .streamlit-expanderHeader, .stApp > .stMarkdown {
+            position: relative;
+        }
+
+
+
+
+
+
+    
     
     /* Hide sidebar and header */
     section[data-testid="stSidebar"] {

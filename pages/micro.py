@@ -18,6 +18,13 @@ st.markdown("""
         background-color: #282B2C;
         color: #fff;
     }
+    section[data-testid="stSidebar"] {
+        display: none;
+    }
+    
+header, .stAppHeader {
+        display: none;
+    }
     
     h1, h2, h3 {
         color: #00A4EF !important;

@@ -171,7 +171,7 @@ st.markdown("""
 <div style="text-align: center; margin-bottom: 40px;">
     <div class="logo-container">
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" width="60" height="60">
+            <img src="https://static.vecteezy.com/system/resources/previews/013/948/549/original/google-logo-on-transparent-white-background-free-vector.jpg" width="60" height="60">
         </div>
     </div>
     <h1>Google Learning Resources</h1>

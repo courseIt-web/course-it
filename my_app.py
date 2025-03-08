@@ -10,7 +10,7 @@ st.set_page_config(
 
 import streamlit as st
 
-background_url = "https://wallpaperboat.com/wp-content/uploads/2019/10/website-background-texture-15.jpg"
+background_url = "https://wallpaperset.com/w/full/f/3/2/32782.jpg"
 
 st.markdown(
     f"""

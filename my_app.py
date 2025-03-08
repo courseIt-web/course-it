@@ -277,7 +277,7 @@ st.markdown("""
 html_file = "index.html"  # Ensure this file is in the same directory as your app
 if st.button("Looking for a Job?"):
     st.switch_page("pages/index.py")
-if st.button("Looking for a Job?"):
+if st.button(MContact mentor"):
     st.switch_page("pages/payment.py")
   
   

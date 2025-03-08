@@ -274,46 +274,46 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
    
-# html_file = "index.html"  # Ensure this file is in the same directory as your app
-# if st.button("Looking for a Job?"):
-#     if os.path.exists(html_file):
-#         # Add a horizontal rule for separation
-#         st.markdown(
-#             """
-#             <style>
-#                 hr {
-#                     margin: 20px auto;
-#                     width: 80%;
-#                     border: 1px solid #ccc;
-#                 }
-#             </style>
-#             <hr>
-#             """,
-#             unsafe_allow_html=True
-#         )
-
-#         # Read and display the HTML file
-#         with open(html_file, "r", encoding="utf-8") as f:
-#             html_content = f.read()
-#         st.components.v1.html(html_content, height=600, scrolling=True)
-  
-  
-  
+html_file = "index.html"  # Ensure this file is in the same directory as your app
 if st.button("Looking for a Job?"):
-    st.markdown(
-    """
-    <style>
-    hr {
-        margin: 20px auto;
-        width: 80%;
-        border: 1px solid #ccc;
-            }
-        </style>
-        <hr>
-        """,
-        unsafe_allow_html=True
+    if os.path.exists(html_file):
+        # Add a horizontal rule for separation
+        st.markdown(
+            """
+            <style>
+                hr {
+                    margin: 20px auto;
+                    width: 80%;
+                    border: 1px solid #ccc;
+                }
+            </style>
+            <hr>
+            """,
+            unsafe_allow_html=True
         )
 
         # Read and display the HTML file
-    st.switch_page("pages/google.py")
+        with open(html_file, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        st.components.v1.html(html_content, height=600, scrolling=True)
+  
+  
+  
+# if st.button("Looking for a Job?"):
+#     st.markdown(
+#     """
+#     <style>
+#     hr {
+#         margin: 20px auto;
+#         width: 80%;
+#         border: 1px solid #ccc;
+#             }
+#         </style>
+#         <hr>
+#         """,
+#         unsafe_allow_html=True
+#         )
+
+#         # Read and display the HTML file
+#     st.switch_page("pages/google.py")
     

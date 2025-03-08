@@ -100,7 +100,7 @@ st.markdown("""
         font-family: 'Poppins', sans-serif;
         background-color: rgba(40, 43, 44, 0.8);
         border-radius: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
    
     

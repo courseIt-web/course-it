@@ -221,8 +221,8 @@ st.markdown("""
         align-items: center;
         justify-content: center;
         color: #FF4B4B;
-        font-weight: 800;
-        font-size: 40px;
+        font-weight: 700;
+        font-size: 50px;
         margin-bottom: 50px;
         cursor: pointer;
         transition: transform 0.4s ease;

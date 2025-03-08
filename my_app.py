@@ -221,7 +221,7 @@ st.markdown("""
         align-items: center;
         justify-content: center;
         color: #FF4B4B;
-        font-weight: 600;
+        font-weight: 800;
         font-size: 40px;
         margin-bottom: 50px;
         cursor: pointer;

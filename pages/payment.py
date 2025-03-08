@@ -99,7 +99,7 @@ experts_data = {
         {
             "name": "Abhinav Mishra",
             "price": "$120/hour",
-            "photo_url": "abhinav.jpg"
+            "photo_url": "https://img.freepik.com/premium-vector/pixel-art-male-character-portrait-with-brown-hair-blue-hoodie-facing-forward_1292377-15514.jpg"
         },
 
     ],

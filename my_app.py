@@ -27,7 +27,7 @@ st.markdown("""
             background-size: 95%;
             opacity:0.8;
             background-position: center;
-            background-image: url('https://wallpaperboat.com/wp-content/uploads/2019/10/best-background-for-website-17.jpg');
+            background-image: url('https://wallpaperaccess.com/full/3941787.jpg');
         }
 
         /* Ensure overlays are behind the content */

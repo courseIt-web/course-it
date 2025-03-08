@@ -311,7 +311,7 @@ with col2:
         </script>
         """, unsafe_allow_html=True)
         time.sleep(0.5)  # Small delay
-        st.switch_page("todo/page_3.py")
+        st.switch_page("pages/todo.py")
 
 # Store user skills in session state for next page
 st.session_state.user_skills = user_skills

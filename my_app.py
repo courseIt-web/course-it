@@ -38,7 +38,7 @@ header, .stAppHeader {
 
     *{
         
-        background-color:#282B2C;
+
      margin:0;
      padding:0;   
        font-family: 'Poppins', sans-serif;

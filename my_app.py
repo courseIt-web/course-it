@@ -27,7 +27,7 @@ st.markdown("""
             background-size: 95%;
             opacity:0.8;
             background-position: center;
-            background-image: url('https://pixelartusa.com/cdn/shop/files/4BP57titanic2_2048x.jpg?v=1696262400');
+            background-image: url('https://wallpaperboat.com/wp-content/uploads/2019/10/website-background-texture-15.jpg');
         }
 
         /* Ensure overlays are behind the content */

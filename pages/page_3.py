@@ -1,9 +1,7 @@
 import streamlit as st
-import streamlit as st
-import pandas as pd
 import random
 import json
-from PIL import Image
+
 import time
 st.markdown("""
 <style>    

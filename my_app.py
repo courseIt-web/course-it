@@ -275,11 +275,16 @@ st.markdown("""
     """, unsafe_allow_html=True)
    
 html_file = "index.html"  # Ensure this file is in the same directory as your app
-if st.button("Looking for a Job?"):
-    st.switch_page("pages/index.py")
-if st.button("Contact Mentor"):
-    st.switch_page("pages/payment.py")
-  
+
+col1, col2 = st.columns(2)  # Create two equal-width columns
+
+with col1:
+    if st.button("Looking for a Job?"):
+        st.switch_page("pages/index.py")
+
+with col2:
+    if st.button("Contact Mentor"):
+        st.switch_page("pages/payment.py")
   
 # if st.button("Looking for a Job?"):
 #     st.markdown(

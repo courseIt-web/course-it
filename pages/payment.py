@@ -17,6 +17,14 @@ st.markdown("""
     * {
         font-family: 'Poppins', sans-serif;
     }
+    section[data-testid="stSidebar"] {
+        display: none;
+    }
+    
+header, .stAppHeader {
+        display: none;
+    }
+  
     
     /* Heading styling */
     .main-heading {

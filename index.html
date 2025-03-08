@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Companies</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            border-radius:20px;
+            background-color: #282B2C;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            color: #FF4B4B;
+            font-size: 2.5rem;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: #333639;
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(255, 75, 75, 0.3);
+        }
+        
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #FF4B4B;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .card h2 {
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        
+        .card p {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Animation for Card Click */
+        @keyframes cardClick {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+        
+        .card.clicked {
+            animation: cardClick 0.3s forwards;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tech Giants</h1>
+    
+    <div class="container">
+        <div class="card" id="google-card">
+            <div class="card-content">
+                <div class="logo">
+                    <img src="https://static.vecteezy.com/system/resources/previews/010/353/285/non_2x/colourful-google-logo-on-white-background-free-vector.jpg" alt="Google Logo" />
+                </div>
+                <h2>Google</h2>
+                <p>A leading technology company specializing in internet-related services, including search engines, cloud computing, and software.</p>
+            </div>
+        </div>
+        
+        <div class="card" id="microsoft-card">
+            <div class="card-content">
+                <div class="logo">
+                    <img src="https://static.vecteezy.com/system/resources/previews/028/339/965/original/microsoft-icon-logo-symbol-free-png.png" alt="Microsoft Logo" />
+                </div>
+                <h2>Microsoft</h2>
+                <p>A multinational technology company focused on software development, consumer electronics, and personal computers.</p>
+            </div>
+        </div>
+        
+        <div class="card" id="facebook-card">
+            <div class="card-content">
+                <div class="logo">
+                    <img src="https://clipartspub.com/images/facebook-logo-clipart-png-format.png" alt="Facebook Logo" />
+                </div>
+                <h2>Facebook</h2>
+                <p>A social media and technology company that builds products to enable community connection and communication.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Click on any card to visit the company website</p>
+    </div>
+    
+    <script>
+        // Add click event listeners to cards
+        document.getElementById('google-card').addEventListener('click', function() {
+            handleCardClick(this, 'htmlpages/google.html');
+        });
+        
+        document.getElementById('microsoft-card').addEventListener('click', function() {
+            handleCardClick(this, 'htmlpages/microsoft.html');
+        });
+        
+        document.getElementById('facebook-card').addEventListener('click', function() {
+            handleCardClick(this, 'htmlpages/facebook.html');
+        });
+        
+        // Function to handle card click
+        function handleCardClick(card, url) {
+            // Add clicked class for animation
+            card.classList.add('clicked');
+            
+            // Delay navigation to allow animation to complete
+            setTimeout(function() {
+                window.location.href = url;
+            }, 300);
+        }
+        
+        // Add hover sound effect (subtle click)
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                // You could add sound effects here if desired
+                // const hoverSound = new Audio('path/to/hover-sound.mp3');
+                // hoverSound.play();
+            });
+        });
+    </script>
+</body>
+</html>

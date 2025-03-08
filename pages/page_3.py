@@ -315,3 +315,4 @@ with col2:
 
 # Store user skills in session state for next page
 st.session_state.user_skills = user_skills
+st.session_state.missing_skills = missing_skills

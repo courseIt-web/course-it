@@ -9,81 +9,77 @@ st.set_page_config(
     )
 
 st.markdown("""
-    
-    
     <style>
-    
+    /* Global styles */
     .stApp{
-            position: relative;
-            min-height: 100vh;
-            background-size: 95%;
-            opacity:0.8;
-            background-position: center;
-         background-image: url('img.jpeg');
-background-size: cover; /* Ensures it covers the full area */
-background-position: center;
-        
-        
+        position: relative;
+        min-height: 100vh;
+        background-size: 95%;
+        opacity: 0.95;
+        background-position: center;
+        background-image: url('img.jpeg');
+        background-size: cover;
     }
     
-section[data-testid="stSidebar"] {
-    display: none;
-}
-header, .stAppHeader {
-    display: none;
-    
-}
-    
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-    *{
-        
-
-     margin:0;
-     padding:0;   
-       font-family: 'Poppins', sans-serif;
+    /* Hide sidebar and header */
+    section[data-testid="stSidebar"] {
+        display: none;
     }
     
+    header, .stAppHeader {
+        display: none;
+    }
     
-    
-    
+    /* Import font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    * {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;   
+        font-family: 'Poppins', sans-serif;
+    }
     </style>
-    
-
-    """,unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 
 st.markdown("""
     <style>
+    /* Navbar styling */
     .navbar {
         overflow: hidden;
         display: flex;
-        padding: 10px;
-        justify-content:center;
-        position:relative;
-       transition-delay: 1s;
-        top:-120px;
+        padding: 15px;
+        justify-content: center;
+        position: relative;
+        top: 0;
         font-family: 'Poppins', sans-serif;
-    
-    
+        background-color: rgba(40, 43, 44, 0.8);
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+    
     .navbar a {
         color: white;
-        padding: 10px 15px;
+        padding: 12px 18px;
         text-decoration: none;
         font-size: 16px;
-        border-radius:10px;
-    margin:20px;
-      font-family: 'Poppins', sans-serif;
+        border-radius: 10px;
+        margin: 0 20px;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease;
     }
+    
     .navbar a:hover {
         background-color: #FF4B4B;
-       
+        transform: translateY(-3px);
     }
-    .p{
+    
+    .p {
         background-color: #FF4B4B;
-        color: black;
-        
+        color: white;
+        font-weight: 500;
     }
     </style>
 
@@ -96,26 +92,34 @@ st.markdown("""
 
 st.markdown("""
     <style>
-    
-       div[data-testid="stSelectbox"] label {
-        color: #32B98B !important;  /* Change to your desired color */
-        font-weight:500;
+    /* Selectbox styling */
+    div[data-testid="stSelectbox"] label {
+        color: #32B98B !important;
+        font-weight: 500;
         font-size: 18px !important;
-    margin:10px;
+        margin: 10px;
     }
-    
     
     /* Center the selectbox container */
     div[data-testid="stSelectbox"] {
         max-width: 300px !important;
         margin: 0 auto !important;
-        color:#32B98B;
+        color: #32B98B;
+        background-color: rgba(91, 91, 91, 0.6);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    
+    div[data-testid="stSelectbox"]:hover {
+        transform: translateY(-5px);
     }
 
     /* Target the container that renders the select control */
     div[data-testid="stSelectbox"] > div {
         background-color: #5b5b5b !important;
-        color: #32B98B !important;  /* Use white text for contrast */
+        color: white !important;
         border-radius: 10px !important;
         padding: 10px !important;
         font-size: 16px !important;
@@ -123,180 +127,87 @@ st.markdown("""
 
     /* Target the arrow icon if present */
     div[data-testid="stSelectbox"] svg {
-        fill: #32b98B !important;
+        fill: #32B98B !important;
     }
 
     /* When focused, adjust the styling */
     div[data-testid="stSelectbox"] > div:focus {
         outline: none !important;
-        
-        
-        
- border: 2px solid #32B98B !important; /* Custom highlight border */
-    outline: none !important;
- background-color: #32B98B !important; /* Change background if desired */
+        border: 2px solid #32B98B !important;
+        background-color: rgba(91, 91, 91, 0.8) !important;
         border-radius: 10px !important;
-  
-        
     }
-    
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown("""
-    
     <style>
-    
-    .m{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        color:#FF4B4B;
-        font-weight:600;
-        font-size:40px;
-        margin-bottom:70px;
-        cursor:pointer;
-        transition:transform 0.4s ease;
-        
+    /* Heading styling */
+    .m {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FF4B4B;
+        font-weight: 600;
+        font-size: 40px;
+        margin-bottom: 50px;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+        text-align: center;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-      .m:hover{
-          transform:scale(1.03);
-      }
-      
-      
-div[data-testid="stTextInput"] {
-    max-width: 100% !important;
-  
-}
+    
+    .m:hover {
+        transform: scale(1.03);
+    }
+    
+    /* Text input styling */
+    div[data-testid="stTextInput"] {
+        max-width: 100% !important;
+    }
 
-
-
-      div[data-testid="stTextInput"] input[type="text"] {
+    div[data-testid="stTextInput"] input[type="text"] {
         background-color: #5B5B5B !important; 
-        color: whte !important; 
-  
-      
+        color: white !important; 
         border-radius: 6px !important;
         padding: 8px !important;
-    
-       
     }
+    
     /* Style the placeholder text */
     div[data-testid="stTextInput"] input[type="text"]::placeholder {
-        color: 282b2c !important; /* Placeholder color */
+        color: #999 !important;
         opacity: 1 !important;
-        font-weight:300;
+        font-weight: 300;
     }
     
+    div[data-testid="stTextInput"] input[type="text"]:focus {
+        border: 2px solid #32B98B !important; 
+        outline: none !important; 
+        cursor: pointer;
+    }
     
-div[data-testid="stTextInput"] input[type="text"]:focus {
-    border: 2px solid #32B98B !important; 
-    outline: none !important; 
-    cursor:pointer;
-}
-div[data-testid="stSelectbox"] label {
-        color: #32B98B !important; /* Change to desired color */
-        font-size: 30px !important; /* Adjust font size */
-        font-weight: 600 !important; /* Bold if desired */
-      background-color: #5b5b5b !important;
-      border-radius:10px;  
-      cursor:pointer;
-    }    
-
-/* Center the selectbox container */
-div[data-testid="stSelectbox"] {
-    max-width: 500px !important;
-    margin: 0 auto !important;
-    background-color:#5b5b5b;
-    padding:20px;
-    border-radius:30px;
-    transition:transform 0.4s ease;
- cursor:pointer;   
-}
-    
-}
-/* Target the container that renders the select control */
-div[data-testid="stSelectbox"] > div {
-    background-color: #5b5b5b !important;
-    color: #5b5b5b !important;
-    # border-radius: 10px !important;
-    padding: 10px !important;
-    font-size: 16px !important;
-    cursor:pointer;
-}
-
-/* Target the arrow icon if present */
-div[data-testid="stSelectbox"] svg {
-    fill: #5b5b5b !important;
-    cursor:pointer;
-}
-
-/* When focused, adjust the border */
-div[data-testid="stSelectbox"] > div:focus {
-    # border: 2px solid #5b5b5b !important;
-    outline: none !important;
-    background-color:#32B98B;
-    border-radius:10px;
-    cursor:pointer;
-}
-    
+    /* "Choose:" label styling */
+    .l {
+        color: #FF4B4B;
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+        background-color: transparent;
+    }
     </style>
- <div class="m">
-    What would you like to Learn?
-</div>
     
-    
-    
-    
-    
-    """,unsafe_allow_html=True)
-
-
-
-
-# other_skills = st.text_input("",placeholder="Search the Domain")
-
-# st.write("""
-    
-#     <style>
-#     .a{
-        
-#         color:#32b98b;
-#     font-weight:600;
-#     font-size:30px;
-#     display:flex;
-#     align-items:center;
-#     justify-content:center;
-#     margin:20px;
-    
-#     }    
-    
-#     </style>
-#     <div class = "a">Or</div>
+    <div class="m">
+        What would you like to Learn?
+    </div>
+    """, unsafe_allow_html=True)
 
 st.markdown("""
-    <style>
-    
-    .l{
-        
-        color:#FF4B4B;
-     position:absolute;
- bottom:-80px;
-         z-index:4;
-         left:400px;
-         font-weight:600;
-         background-color:#5b5b5b;
-         cursor:pointer;
-      font-family: 'Poppins', sans-serif;
-    }
-    </style>
     <div class="l">
-    Choose :
+    Choose:
     </div>
-    
-    """,unsafe_allow_html=True)
-
-import streamlit as st
+    """, unsafe_allow_html=True)
 
 # Initialize session state variable if it doesn't exist
 if "selected_option" not in st.session_state:
@@ -315,13 +226,18 @@ st.session_state.selected_option = selected_option
 if selected_option and selected_option != "Select an option":
     st.switch_page("pages/skills.py")
 
-#navigating to other page
-
-
-
-# if page == "home":
-#     st.write("🏠 Welcome to Home Page!")
-# elif page == "about":
-#     st.write("📖 About Us")
-# elif page == "contact":
-#     st.write("📧 Contact Us")
+# Add footer
+st.markdown("""
+    <style>
+    .footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #999;
+        font-size: 0.9rem;
+    }
+    </style>
+    
+    <div class="footer">
+        <p>© 2025 AI Job Gap Analyzer - Select a learning path to continue</p>
+    </div>
+    """, unsafe_allow_html=True)

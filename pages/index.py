@@ -44,7 +44,7 @@ css = """
     .card {
         background-color: #333639;
         width: 100%;
-        height: 300px;
+        height: 400px;
         border-radius: 15px;
         overflow: hidden;
         transition: all 0.3s ease;

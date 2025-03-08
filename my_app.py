@@ -8,6 +8,32 @@ st.set_page_config(
     initial_sidebar_state="expanded"
     )
 
+import streamlit as st
+
+background_url = "https://wallpaperboat.com/wp-content/uploads/2019/10/website-background-texture-15.jpg"
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background: url("{background_url}") no-repeat center center fixed;
+        background-size: cover;
+    }}
+    .stApp::before {{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        filter: blur(5px);
+        z-index: -1;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 

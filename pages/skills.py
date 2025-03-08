@@ -191,6 +191,8 @@ common_skills = [
 user_skills = st.multiselect("Select your skills", options=common_skills)
 
 # Display the selected skills
+if user_skills:
+    st.write("You selected:", user_skills)
 
 # Horizontal rule
 st.markdown("""<hr>""", unsafe_allow_html=True)

@@ -276,7 +276,7 @@ st.markdown("""
    
 html_file = "index.html"  # Ensure this file is in the same directory as your app
 
-col1, col2,col3 = st.columns([1,2,1])  # Create two equal-width columns
+col1, col2,col3 = st.columns([1,3,1])  # Create two equal-width columns
 
 with col1:
     if st.button("Looking for a Job?"):

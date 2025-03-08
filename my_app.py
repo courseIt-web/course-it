@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+import os
 st.set_page_config(
     page_title="AI Job Gap Analyzer",
     page_icon="🧠",
@@ -52,15 +52,21 @@ st.markdown("""
         padding: 15px;
         justify-content: center;
         position: relative;
-        top: 0;
+         transform: translateX(30%);
+        top: -80px;
         font-family: 'Poppins', sans-serif;
         background-color: rgba(40, 43, 44, 0.8);
         border-radius: 10px;
         margin-bottom: 30px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   
+    
+             width:60%;
     }
     
     .navbar a {
+        
+    
         color: white;
         padding: 12px 18px;
         text-decoration: none;
@@ -142,7 +148,31 @@ st.markdown("""
 
 st.markdown("""
     <style>
+    /* Ensure the hover effect applies to the correct part of the selectbox */
+    div[data-testid="stSelectbox"] div[role="combobox"]:hover {
+        background-color: rgba(91, 91, 91, 0.8) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+        border-radius: 10px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    /* Ensure the hover effect applies to the correct part of the selectbox */
+    div[data-testid="stSelectbox"] div[role="combobox"]:hover {
+        background-color: rgba(91, 91, 91, 0.8) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+        border-radius: 10px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
     /* Heading styling */
+
     .m {
         display: flex;
         align-items: center;
@@ -166,6 +196,7 @@ st.markdown("""
         max-width: 100% !important;
     }
 
+    
     div[data-testid="stTextInput"] input[type="text"] {
         background-color: #5B5B5B !important; 
         color: white !important; 
@@ -225,6 +256,7 @@ st.session_state.selected_option = selected_option
 # Navigate only when a valid option is chosen
 if selected_option and selected_option != "Select an option":
     st.switch_page("pages/skills.py")
+        
 
 # Add footer
 st.markdown("""
@@ -241,3 +273,28 @@ st.markdown("""
         <p>© 2025 AI Job Gap Analyzer - Select a learning path to continue</p>
     </div>
     """, unsafe_allow_html=True)
+   
+html_file = "index.html"  # Ensure this file is in the same directory as your app
+if st.button("Looking for a Job?"):
+    if os.path.exists(html_file):
+        # Add a horizontal rule for separation
+        st.markdown(
+            """
+            <style>
+                hr {
+                    margin: 20px auto;
+                    width: 80%;
+                    border: 1px solid #ccc;
+                }
+            </style>
+            <hr>
+            """,
+            unsafe_allow_html=True
+        )
+
+        # Read and display the HTML file
+        with open(html_file, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        st.components.v1.html(html_content, height=600, scrolling=True)
+    else:
+        st.error(f"File not found: {html_file}")

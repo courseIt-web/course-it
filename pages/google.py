@@ -11,13 +11,7 @@ st.set_page_config(
     layout="centered"
 )
 
-section[data-testid="stSidebar"] {
-        display: none;
-    }
-    
-header, .stAppHeader {
-        display: none;
-    }
+
 # Custom CSS to match the dark theme from the reference
 st.markdown("""
 <style>
@@ -25,7 +19,13 @@ st.markdown("""
         background-color: #282B2C;
         color: #fff;
     }
+    section[data-testid="stSidebar"] {
+        display: none;
+    }
     
+header, .stAppHeader {
+        display: none;
+    }
     h1, h2, h3 {
         color: #FF4B4B !important;
     }

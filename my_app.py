@@ -25,7 +25,7 @@ st.markdown("""
             position: relative;
             min-height: 100vh;
             background-size: 95%;
-            opacity:0.8;
+            opacity:1.0;
             background-position: center;
             background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F4218996.jpg&f=1&nofb=1&ipt=3cfac50a373b092d098073f5f02155ed5be54d7a93870d0239492250bea91bf5&ipo=images');
         }

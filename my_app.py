@@ -11,22 +11,6 @@ st.set_page_config(
 
 
 
-# CSS for setting background and applying blur
-background_url = "https://wallpaperboat.com/wp-content/uploads/2019/10/website-background-texture-15.jpg"
-
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url("{background_url}");
-        background-size: cover;
-        filter: blur(5px);
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st.markdown("""
     <style>
     /* Global styles */

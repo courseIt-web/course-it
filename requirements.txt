@@ -1,0 +1,5 @@
+nginx
+Copy
+Edit
+streamlit
+google-generativeai

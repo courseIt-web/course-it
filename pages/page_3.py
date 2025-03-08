@@ -1,8 +1,9 @@
 import streamlit as st
 import random
 import json
-
 import time
+
+# Hide sidebar and header
 st.markdown("""
 <style>    
 section[data-testid="stSidebar"], header, .stAppHeader {
@@ -25,21 +26,12 @@ section[data-testid="stSidebar"], header, .stAppHeader {
 </style>
 """, unsafe_allow_html=True)
 
-
 # Title
 st.markdown('<div class="k"><h1>Checking Skill Gap</h1></div>', unsafe_allow_html=True)
+st.markdown("<hr>", unsafe_allow_html=True)
+st.subheader("Let's Check Your Skill Gap:")
 
-
-st.markdown(
-    """
-    
-    <hr>
-    
-    """
-    ,unsafe_allow_html=True)
-
-st.subheader("Lets Check Your skill gap : ")
-
+# Define the job skills data
 data = {
     "Machine Learning": {
         "required_skills": [
@@ -61,23 +53,31 @@ data = {
     }
 }
 
-# Define job_title and user_skills
+# Set default session state values if not already defined
+if "selected_option" not in st.session_state:
+    st.session_state.selected_option = "Machine Learning"  # Default job title
+if "user_skills" not in st.session_state:
+    st.session_state.user_skills = ["Python", "SQL", "Machine Learning"]  # Default skills
+
+# Retrieve job title and user skills from session state
 job_title = st.session_state.selected_option
 user_skills = st.session_state.user_skills
 
+# Write the job skills data to file (this overwrites every run; adjust as needed)
 with open('job_skills.json', 'w') as f:
-    json.dump(data, f, indent=4)  # Pretty formatting for readability
+    json.dump(data, f, indent=4)
+
+# Function to load job skills data from file
 def load_job_skills():
     with open('job_skills.json', 'r') as f:
         return json.load(f)
 
-
-# Function to analyze skill gap
+# Function to analyze the skill gap
 def analyze_skill_gap(user_skills, job_title):
     job_data = load_job_skills()
     
     if job_title not in job_data:
-        return [], [], 0  # Ensure match_percentage is always a float
+        return [], [], 0  # Return empty results if job title not found
     
     required_skills = job_data[job_title]["required_skills"]
     
@@ -85,55 +85,47 @@ def analyze_skill_gap(user_skills, job_title):
     user_skills_lower = [skill.lower() for skill in user_skills]
     required_skills_lower = [skill.lower() for skill in required_skills]
     
-    # Find missing skills
-    missing_skills = [skill for skill, skill_lower in zip(required_skills, required_skills_lower) 
-                     if skill_lower not in user_skills_lower]
-    
-    # Find matching skills
-    matching_skills = [skill for skill, skill_lower in zip(required_skills, required_skills_lower) 
-                      if skill_lower in user_skills_lower]
+    # Determine missing and matching skills
+    missing_skills = [skill for skill, skill_lower in zip(required_skills, required_skills_lower)
+                      if skill_lower not in user_skills_lower]
+    matching_skills = [skill for skill, skill_lower in zip(required_skills, required_skills_lower)
+                       if skill_lower in user_skills_lower]
     
     # Calculate match percentage
-    match_percentage = len(matching_skills) / len(required_skills) * 100 if required_skills else 0
-    
-    return missing_skills, matching_skills, float(match_percentage)  # Ensure it's a float
+    match_percentage = (len(matching_skills) / len(required_skills) * 100) if required_skills else 0
+    return missing_skills, matching_skills, float(match_percentage)
 
-
-# Get missing skills, matching skills, and match percentage
+# Get analysis results
 missing_skills, matching_skills, match_percentage = analyze_skill_gap(user_skills, job_title)
 
-# Display results
-st.subheader("Analysis Results")
+# Save the analysis results to session state so that they persist across pages
+st.session_state.missing_skills = missing_skills
+st.session_state.matching_skills = matching_skills
+st.session_state.match_percentage = match_percentage
 
-# Progress bar for skill match
-st.markdown(f"**Skill Match: {match_percentage:.1f}%**")  # Ensure formatting works
+# Display the analysis results
+st.subheader("Analysis Results")
+st.markdown(f"**Skill Match: {match_percentage:.1f}%**")
 st.progress(match_percentage / 100)
 
-# Display matching and missing skills
 col1, col2 = st.columns(2)
-
 with col1:
     st.markdown("**Skills You Have:**")
     for skill in matching_skills:
         st.markdown(f"✅ {skill}")
-
 with col2:
     st.markdown("**Skills You Need:**")
     for skill in missing_skills:
         st.markdown(f"❌ {skill}")
 
-
-
-
-       
+# Navigation buttons
 col1, col2 = st.columns(2)
-
 with col1:
     if st.button("Go Back"):
         st.switch_page("pages/skills.py")
-
 with col2:
     if st.button("Continue"):
-        st.switch_page("todo/page_3.py")
-        
-st.session_state.user_skills=user_skills
+        st.switch_page("pages/todo.py")
+
+# Ensure user_skills stays in session state
+st.session_state.user_skills = user_skills

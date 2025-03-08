@@ -6,12 +6,12 @@ import random
 
 # Set page config
 st.set_page_config(
-    page_title="Meta (Facebook) - Learning Resources",
-    page_icon="📱",
+    page_title="Google - Learning Resources",
+    page_icon="🔍",
     layout="centered"
 )
 
-# Custom CSS to match Meta's theme (blue)
+# Custom CSS to match the dark theme from the reference
 st.markdown("""
 <style>
     .stApp {
@@ -20,7 +20,7 @@ st.markdown("""
     }
     
     h1, h2, h3 {
-        color: #1877F2 !important;
+        color: #FF4B4B !important;
     }
     
     .card {
@@ -36,7 +36,7 @@ st.markdown("""
     
     .card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(24, 119, 242, 0.3);
+        box-shadow: 0 15px 30px rgba(255, 75, 75, 0.3);
     }
     
     .youtube-card {
@@ -142,40 +142,40 @@ st.markdown("""
 
 # Function to get featured YouTube videos
 def get_featured_video(topic):
-    # Predefined videos related to Meta/Facebook interviews and preparation
+    # Since we can't actually query YouTube API here, we'll simulate with predefined videos
     featured_videos = {
         "main": {
-            "id": "t3HIcFt3Bvk",
-            "title": "Facebook Coding Interview with a PhD Student",
-            "views": "3.8M",
+            "id": "YK-GurROPCQ",
+            "title": "Google Coding Interview With A Normal Software Engineer",
+            "views": "12.4M",
             "channel": "Clément Mihailescu"
         },
         "dsa": {
-            "id": "wCl9kvQGHPI",
-            "title": "How to Use Data Structures & Algorithms to Ace Your Meta Interview",
-            "views": "879K",
-            "channel": "Meta Careers"
+            "id": "XKu_SEDAykw",
+            "title": "How to: Work at Google — Example Coding/Engineering Interview",
+            "views": "5.8M",
+            "channel": "Life at Google"
         },
         "interview": {
-            "id": "4NIb9l3imAo",
-            "title": "Decoding the Facebook Software Engineering Interview",
+            "id": "Ko-KkdtsNY8",
+            "title": "Google Coding Interview Question and Answer: Most Frequent Word in Array",
             "views": "1.2M",
-            "channel": "TechLead"
+            "channel": "CS Dojo"
         }
     }
     
     return featured_videos.get(topic, featured_videos["main"])
 
-# Display Meta/Facebook header with logo
+# Display Google header with logo
 st.markdown("""
 <div style="text-align: center; margin-bottom: 40px;">
     <div class="logo-container">
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" width="80" height="80">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" width="60" height="60">
         </div>
     </div>
-    <h1>Meta (Facebook) Learning Resources</h1>
-    <p style="color: #ccc; margin-bottom: 30px;">Prepare for Meta interviews with these curated resources</p>
+    <h1>Google Learning Resources</h1>
+    <p style="color: #ccc; margin-bottom: 30px;">Prepare for Google interviews with these curated resources</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -188,10 +188,10 @@ if st.session_state.page == "main":
     # Create two columns for the cards
     col1, col2 = st.columns(2)
     
-    # DSA Questions Card - Linking to GitHub
+    # DSA Questions Card - Now linking to GitHub
     with col1:
         st.markdown("""
-        <a href="https://github.com/rachitiitr/meta-interview-prep" target="_blank" style="text-decoration: none;">
+        <a href="https://github.com/bollwarm/DataStructuresAlgorithms" target="_blank" style="text-decoration: none;">
             <div class="card" id="dsa-card">
                 <h2 class="card-title">
                     <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -199,15 +199,15 @@ if st.session_state.page == "main":
                     </svg>
                     Recommended DSA Questions
                 </h2>
-                <p class="card-text">A collection of data structures and algorithms questions commonly asked in Meta interviews.</p>
+                <p class="card-text">A collection of data structures and algorithms questions commonly asked in Google interviews.</p>
             </div>
         </a>
         """, unsafe_allow_html=True)
     
-    # Interview Questions Card - Linking to GeeksforGeeks
+    # Interview Questions Card - Now linking to GeeksforGeeks
     with col2:
         st.markdown("""
-        <a href="https://www.geeksforgeeks.org/meta-facebook-interview-questions/" target="_blank" style="text-decoration: none;">
+        <a href="https://www.geeksforgeeks.org/google-interview-questions/" target="_blank" style="text-decoration: none;">
             <div class="card" id="interview-card">
                 <h2 class="card-title">
                     <svg class="gfg-icon" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -215,7 +215,7 @@ if st.session_state.page == "main":
                     </svg>
                     Famous Interview Questions
                 </h2>
-                <p class="card-text">Real interview questions from Meta that test problem-solving skills and technical knowledge.</p>
+                <p class="card-text">Real interview questions from Google that test problem-solving skills and technical knowledge.</p>
             </div>
         </a>
         """, unsafe_allow_html=True)
@@ -242,39 +242,39 @@ if st.session_state.page == "main":
     """, unsafe_allow_html=True)
 
 elif st.session_state.page == "dsa":
-    st.markdown("## Recommended DSA Questions for Meta")
+    st.markdown("## Recommended DSA Questions")
     st.markdown("""
     ### Data Structures
     1. **Arrays and Strings**
-       - Valid Parentheses
-       - Product of Array Except Self
-       - Minimum Window Substring
+       - Two Sum Problem
+       - Container With Most Water
+       - String Compression
     
     2. **Linked Lists**
-       - Merge K Sorted Lists
-       - Reverse Nodes in k-Group
-       - Flatten a Multilevel Doubly Linked List
+       - Detect Cycle in a Linked List
+       - Merge Two Sorted Lists
+       - Reverse a Linked List
     
     3. **Trees and Graphs**
-       - Binary Tree Right Side View
-       - Serialize and Deserialize Binary Tree
-       - Alien Dictionary
+       - Binary Tree Level Order Traversal
+       - Validate Binary Search Tree
+       - Number of Islands
     
     ### Algorithms
     1. **Sorting and Searching**
-       - Kth Largest Element in an Array
-       - Find First and Last Position of Element in Sorted Array
-       - Search in Rotated Sorted Array
+       - Binary Search
+       - Merge Sort
+       - Quick Sort
     
     2. **Dynamic Programming**
-       - Regular Expression Matching
-       - Longest Valid Parentheses
-       - Decode Ways
+       - Longest Increasing Subsequence
+       - Coin Change Problem
+       - Edit Distance
     
     3. **Graph Algorithms**
-       - Clone Graph
-       - Accounts Merge
-       - Minimum Height Trees
+       - Breadth-First Search
+       - Depth-First Search
+       - Dijkstra's Algorithm
     """)
     
     # Featured YouTube Video for DSA
@@ -303,32 +303,29 @@ elif st.session_state.page == "dsa":
         st.experimental_rerun()
 
 elif st.session_state.page == "interview":
-    st.markdown("## Famous Meta (Facebook) Interview Questions")
+    st.markdown("## Famous Google Interview Questions")
     st.markdown("""
     ### Coding Questions
-    1. **LRU Cache**
+    1. **Implement an LRU Cache**
        - Design and implement a data structure for Least Recently Used (LRU) cache
     
-    2. **Flatten Nested List Iterator**
-       - Design an iterator to flatten a nested list of integers
+    2. **Word Search**
+       - Given a 2D board and a word, find if the word exists in the grid
     
-    3. **Add Strings**
-       - Given two non-negative integers represented as string, return their sum
+    3. **Median of Two Sorted Arrays**
+       - Find the median of two sorted arrays
     
     ### System Design
-    1. **Design Facebook Newsfeed**
-       - How would you design the Facebook news feed algorithm?
+    1. **Design Google Search**
+       - How would you design the Google search engine?
     
-    2. **Design Instagram**
-       - How would you design a photo-sharing social network?
-    
-    3. **Design Facebook Messenger**
-       - How would you design a scalable messaging platform?
+    2. **Design Google Maps**
+       - How would you design a mapping and navigation system?
     
     ### Behavioral Questions
-    1. "Tell me about a time when you faced a significant technical challenge."
-    2. "How do you handle disagreements with team members?"
-    3. "Describe a situation where you took ownership of a project."
+    1. "Tell me about a time when you demonstrated leadership."
+    2. "How do you handle conflicts within your team?"
+    3. "Describe a situation where you had to make a decision with incomplete information."
     """)
     
     # Featured YouTube Video for Interview
